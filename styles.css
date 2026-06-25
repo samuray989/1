@@ -1,0 +1,503 @@
+/* -------------------------------------------------------------
+   Grand L'Aura Resort & Spa - Luxury Custom Stylesheet
+   Extends Bootswatch Lux Theme (Montserrat-focused Minimalist Style)
+------------------------------------------------------------- */
+
+/* Custom Variables */
+:root {
+  --color-gold: hsl(38, 45%, 68%);
+  --color-gold-dark: hsl(38, 45%, 52%);
+  --color-gold-light: hsl(38, 45%, 85%);
+  --color-gold-translucent: rgba(212, 175, 55, 0.15);
+  --color-black-pure: #000000;
+  --color-bg-base: #0a0a0a;
+  --color-bg-card: #121212;
+  --color-bg-input: #181818;
+  --color-text-muted: #888888;
+  --color-text-light-muted: #c2c2c2;
+  --transition-speed: 0.4s;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Montserrat', 'Inter', sans-serif;
+}
+
+/* Base Body Styling Override */
+body {
+  background-color: var(--color-bg-base);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* Typography Extensions */
+.font-serif {
+  font-family: var(--font-serif) !important;
+}
+.tracking-widest {
+  letter-spacing: 0.25em !important;
+}
+.tracking-wider {
+  letter-spacing: 0.12em !important;
+}
+.max-w-2xl {
+  max-width: 42rem;
+}
+.max-w-sm {
+  max-width: 24rem;
+}
+.max-w-4xl {
+  max-width: 56rem;
+}
+.leading-relaxed {
+  line-height: 1.85 !important;
+}
+
+/* Spacing Extensions */
+.py-10 {
+  padding-top: 8rem !important;
+  padding-bottom: 8rem !important;
+}
+.py-8 {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+.mb-6 {
+  margin-bottom: 4.5rem !important;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-dark);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* Custom Colored Accents */
+.text-gold {
+  color: var(--color-gold) !important;
+}
+.bg-dark-accent {
+  background-color: #0d0d0d !important;
+}
+.bg-gold-translucent {
+  background-color: var(--color-gold-translucent) !important;
+}
+.bg-gold {
+  background-color: var(--color-gold) !important;
+}
+.divider-gold {
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-gold);
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Custom Grains/Gradients */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(10, 10, 10, 0.85) 80%,
+    var(--color-bg-base) 100%
+  );
+  z-index: 1;
+}
+
+/* Navigation Customization */
+.navbar {
+  transition: background-color var(--transition-speed) ease, padding var(--transition-speed) ease;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.navbar.scrolled {
+  background-color: rgba(10, 10, 10, 0.85) !important;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+.navbar-brand {
+  font-size: 1.4rem;
+  transition: letter-spacing var(--transition-speed);
+}
+.navbar-brand:hover {
+  letter-spacing: 0.28em !important;
+}
+.nav-link {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 500;
+  position: relative;
+  transition: color var(--transition-speed);
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--color-gold);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+  left: 0;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-gold) !important;
+}
+
+/* Custom Buttons styling */
+.btn-gold {
+  background-color: var(--color-gold);
+  border: 1px solid var(--color-gold);
+  color: var(--color-black-pure) !important;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  transition: all var(--transition-speed) cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.btn-gold:hover,
+.btn-gold:focus {
+  background-color: transparent;
+  color: var(--color-gold) !important;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
+}
+.btn-outline-gold {
+  background-color: transparent;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold) !important;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  transition: all var(--transition-speed) cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.btn-outline-gold:hover,
+.btn-outline-gold:focus,
+.btn-outline-gold.active {
+  background-color: var(--color-gold);
+  color: var(--color-black-pure) !important;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  transform: translateY(-2px);
+}
+.btn-icon {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: var(--color-black-pure);
+}
+.hero-bg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  animation: zoom-out-slow 12s infinite alternate ease-in-out;
+}
+.hero-content {
+  max-width: 850px;
+}
+.text-light-muted {
+  color: var(--color-text-light-muted);
+}
+.hero-subtitle {
+  font-size: 0.9rem;
+}
+
+@keyframes zoom-out-slow {
+  0% { transform: scale(1.08); }
+  100% { transform: scale(1.02); }
+}
+
+/* Scroll Arrow Animation */
+.scroll-arrow-animate {
+  animation: bounce-scroll 2s infinite;
+}
+@keyframes bounce-scroll {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+  60% { transform: translateY(-4px); }
+}
+
+/* Circle Icons */
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* Glassmorphism Badge and Cards */
+.bg-glass {
+  background: rgba(18, 18, 18, 0.65);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+.floating-badge {
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  z-index: 10;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  max-width: 180px;
+}
+@media (max-width: 767px) {
+  .floating-badge {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: 2rem;
+    max-width: 100%;
+  }
+}
+
+.experience-img-wrapper {
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.experience-img-wrapper img:hover {
+  transform: scale(1.03);
+}
+
+/* Suite Cards */
+.border-gold-subtle {
+  border: 1px solid rgba(212, 175, 55, 0.15) !important;
+}
+.suite-card {
+  transition: all var(--transition-speed) cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 0;
+}
+.suite-img-wrapper {
+  overflow: hidden;
+}
+.suite-card-img {
+  transition: transform 6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  object-fit: cover;
+  height: 250px;
+}
+.suite-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-gold) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+.suite-card:hover .suite-card-img {
+  transform: scale(1.07);
+}
+.badge-price {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  box-shadow: -4px 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Wellness Section (Parallax effect) */
+.wellness-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+.wellness-bg-parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+@media (max-width: 991px) {
+  /* Fix fixed attachment bug on mobile */
+  .wellness-bg-parallax {
+    background-attachment: scroll;
+  }
+}
+.wellness-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 10, 0.5) 0%,
+    rgba(10, 10, 10, 0.9) 100%
+  );
+  z-index: 1;
+}
+@media (max-width: 991px) {
+  .wellness-overlay {
+    background: rgba(10, 10, 10, 0.85);
+  }
+}
+.glass-wellness-card {
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+  transition: border-color var(--transition-speed);
+  border-radius: 0;
+}
+.testimonial-card:hover {
+  border-color: var(--color-gold) !important;
+}
+
+/* Reservation / Booking Cards & Form controls */
+.booking-card {
+  border-radius: 0;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  z-index: 2;
+}
+.booking-card-accent-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+}
+.form-control, .form-select {
+  border-radius: 0;
+  color: #fff !important;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+.form-control:focus, .form-select:focus {
+  background-color: rgba(20, 20, 20, 0.9) !important;
+  border-color: var(--color-gold) !important;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2) !important;
+  color: #fff !important;
+}
+.form-control::placeholder {
+  color: #555;
+}
+
+/* Modal styling */
+.modal-content {
+  border-radius: 0;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+}
+.modal-icon-container {
+  width: 80px;
+  height: 80px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+}
+
+/* Footer Custom Styling */
+.footer {
+  font-size: 0.9rem;
+}
+.footer-links a {
+  transition: color var(--transition-speed), transform var(--transition-speed);
+  display: inline-block;
+}
+.footer-links a:hover {
+  color: var(--color-gold) !important;
+  transform: translateX(4px);
+}
+.footer-legal a {
+  transition: color var(--transition-speed);
+}
+.footer-legal a:hover {
+  color: var(--color-gold) !important;
+}
+.social-links a {
+  transition: all 0.3s ease;
+}
+.social-links a:hover {
+  background-color: var(--color-gold);
+  color: var(--color-black-pure) !important;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+/* -------------------------------------------------------------
+   Reveal on Scroll Animations (CSS + IntersectionObserver JS)
+------------------------------------------------------------- */
+.reveal-up,
+.reveal-up-delay-1,
+.reveal-up-delay-2,
+.reveal-up-delay-3,
+.reveal-left,
+.reveal-right,
+.fade-in-up {
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1), transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: transform, opacity;
+}
+
+/* Transformations prior to scroll */
+.reveal-up, .reveal-up-delay-1, .reveal-up-delay-2, .reveal-up-delay-3 {
+  transform: translateY(40px);
+}
+.reveal-left {
+  transform: translateX(-40px);
+}
+.reveal-right {
+  transform: translateX(40px);
+}
+.fade-in-up {
+  transform: translateY(30px);
+}
+
+/* Delay parameters */
+.reveal-up-delay-1 { transition-delay: 0.15s; }
+.reveal-up-delay-2 { transition-delay: 0.3s; }
+.reveal-up-delay-3 { transition-delay: 0.45s; }
+
+/* Active Class trigger */
+.reveal-active {
+  opacity: 1 !important;
+  transform: translate(0) !important;
+}
+
+/* Immediate load animations (e.g. Hero Section) */
+.hero-content.fade-in-up {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1.5s cubic-bezier(0.165, 0.84, 0.44, 1), transform 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
